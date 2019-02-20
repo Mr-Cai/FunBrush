@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+androidExtensions {
+    experimental = true
+}
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "fun.brush"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    configurations {
+        all*.exclude group: 'com.squareup.okio' //解决OkIO冲突
+        all*.exclude group: 'com.google.code.gson' //解决谷歌简谱库冲突
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs') //文件依赖树
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version" //kotlin版本
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha02' //兼容包
+    implementation 'androidx.core:core-ktx:1.1.0-alpha04' //kotlin支持核心包
+    implementation 'com.google.android.material:material:1.1.0-alpha03' //材料设计库
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3' //约束布局
+    implementation 'com.github.bumptech.glide:glide:4.9.0' //滑翔图片加载库
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0' //改造网络解析库
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.1' //饺子播放器
+    implementation 'org.greenrobot:eventbus:3.1.1' //事件总线
+    implementation 'com.xwray:groupie:2.3.0' //Groupie适配器库
+    implementation 'cn.bmob.android:bmob-sdk:3.6.6' //比目数据库
+    implementation 'cn.bmob.android:bmob-im:2.1.1@aar' //比目通讯库
+    implementation 'com.squareup.okio:okio:2.2.2' //输入输出增强库
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1' //OK网络请求库
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0' //Json转换器
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.13.1' //日志
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.11' //java响应式编程
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0' //rxJava适配器
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2' //rxAndroid
+    implementation 'com.amap.api:location:4.5.0' //高德定位
+}

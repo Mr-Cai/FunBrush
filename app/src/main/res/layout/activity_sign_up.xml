@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="40dp"
+    tools:context=".view.activity.sign.SignInActivity">
+
+    <ImageView
+        android:id="@+id/shakeIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:contentDescription="@null"
+        android:src="@drawable/shake_it" />
+
+    <fun.brush.view.custom.RoundImage
+        android:id="@+id/userIconPic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_user_default" />
+
+    <EditText
+        android:id="@+id/userNameET"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/circle_corner_bg"
+        android:drawableEnd="@drawable/ic_user"
+        android:hint="@string/userName"
+        android:inputType="text"
+        android:paddingStart="30dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textCursorDrawable="@null"
+        tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/circle_corner_bg"
+        android:drawableEnd="@drawable/ic_password"
+        android:hint="@string/pwd"
+        android:inputType="textPassword"
+        android:maxLength="6"
+        android:paddingStart="30dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textCursorDrawable="@null"
+        tools:ignore="Autofill" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/corner_button"
+        android:text="@string/register"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

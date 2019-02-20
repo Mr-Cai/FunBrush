@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/like"
+        android:icon="@drawable/ic_like"
+        android:title="@string/like" />
+    <item
+        android:id="@+id/forward"
+        android:icon="@drawable/ic_forward"
+        android:title="@string/forward" />
+    <item
+        android:id="@+id/comment"
+        android:icon="@drawable/ic_comment"
+        android:title="@string/comment" />
+    <item
+        android:id="@+id/download"
+        android:icon="@drawable/ic_file_download"
+        android:title="@string/download" />
+</menu>

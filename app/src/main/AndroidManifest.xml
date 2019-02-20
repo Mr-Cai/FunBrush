@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="fun.brush">
+
+    <uses-permission android:name="android.permission.INTERNET" />  <!--网络权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!--访问网络状态-->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /><!--监听网络状态改变-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!--监控设备休眠 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />   <!--读取手机状态-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!--操作内部存储-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" /><!--摄像头-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /><!--录音-->
+    <uses-permission android:name="android.permission.VIBRATE" /><!--通知震动-->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!--拨打电话-->
+    <uses-permission android:name="android.permission.BODY_SENSORS" /> <!--身体传感器-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!--GPS定位-->
+
+    <application
+        android:name="fun.brush.viewmodel.util.FunBrush"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b0e0f34d0ae975faf0c40ccb5ba25bf5" />
+        <meta-data
+            android:name="Bmob_APP_KEY"
+            android:value="f7426d37bc76d0da45471d521b00218e" />
+        <receiver
+            android:name="cn.bmob.newim.core.ConnectChangeReceiver"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="cn.bmob.action.RECONNECT" />
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="cn.bmob.newim.core.service.BmobIMService"
+            android:process=":bmobcore" />
+        <service
+            android:name="cn.bmob.newim.core.service.NotifyService"
+            android:process=":bmobcore" />
+        <service android:name="cn.bmob.newim.core.service.ReConnectService" />
+        <service android:name="cn.bmob.newim.core.service.HeartBeatService" />
+
+        <service android:name="com.amap.api.location.APSService" />
+        <activity
+            android:name="fun.brush.view.activity.StartActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="fun.brush.view.activity.options.NoteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.options.WeatherActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.options.GirlsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="fun.brush.view.activity.message.EditMindActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.message.PublishActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.message.PeopleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.options.TranslateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.message.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.sign.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateVisible" />
+        <activity
+            android:name="fun.brush.view.activity.WebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="fun.brush.view.activity.sign.SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.sign.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fun.brush.view.activity.options.NoteEditActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

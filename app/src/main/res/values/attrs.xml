@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PosterAttr">
+        <attr name="selected" format="reference" />
+        <attr name="unselected" format="reference" />
+        <attr name="distance" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="RoundImage">
+        <attr name="borderRadius" format="dimension" />
+        <attr name="type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>
